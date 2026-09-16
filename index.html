@@ -63,11 +63,14 @@
         }
         .btn-clear { background-color: #4b5563; }
         .btn-clear:hover { background-color: #374151; }
-        .btn-download { background-color: #c0504d; }
-        .btn-download:hover { background-color: #a0403d; }
+        
+        /* Đã đổi màu nút Tải về sang xanh logo */
+        .btn-download { background-color: #00a2ff; }
+        .btn-download:hover { background-color: #0088d1; }
 
         .status { font-size: 13px; color: #6b7280; margin-top: -6px; margin-bottom: 12px; min-height: 16px; }
-        .status.error { color: #c0504d; font-weight: bold; }
+        /* Giữ màu đỏ cho trạng thái lỗi */
+        .status.error { color: #d32f2f; font-weight: bold; }
 
         /* --- CẤU TRÚC PDF CHIA TRANG ---
            Quan trọng: KHÔNG dùng "left:-9999px" nữa vì một số bản
@@ -101,8 +104,10 @@
             background-size: contain; background-repeat: no-repeat;
             background-position: center; opacity: 0.15; z-index: 1;
         }
+        
+        /* Đã đổi màu Header đồng bộ với logo */
         .pdf-header {
-            background-color: #c0504d; color: white;
+            background-color: #00a2ff; color: white;
             padding: 12px 20px; display: flex;
             justify-content: space-between; font-size: 14pt;
             font-weight: bold; z-index: 2; position: relative;
@@ -286,7 +291,7 @@
             setGenStatus('Đang tạo file PDF để tải về...');
             try {
                 const pdf = await buildPdf();
-                pdf.save('TaiLieu_TiengTrung.pdf');
+                pdf.save('TaiLieu_ToaDoDinhTinh.pdf'); /* Đã đổi tên file xuất ra theo tên dự án */
                 setGenStatus('Đã tải PDF ✔');
             } catch (err) {
                 console.error(err);
